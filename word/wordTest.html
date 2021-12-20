@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="myStyle.css">
+    <script src="./myUtil.js"></script>
+    <script src="./FileSave.js"></script>
+    <script src="./words.js"></script>
+    <script src="./data.js"></script>
+    <script src="./server.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div id="search">
+                <div class="search-box">
+                    <button class="btn-search"><i class="fas fa-search">搜一搜</i></button>
+                    <input type="text" class="input-search" placeholder="请输入:">
+                </div>
+                <div class="exit"></div>
+            </div>
+        </div>
+        <div>
+            <div class="word" id="Target">单词记忆</div>
+            <div id= "chioceArea">
+                <div class="chioce" id="chioce1" onclick="AnswerEvent(this.innerText,this.id)">第一个选项</div>
+                <div class="chioce" id="chioce2" onclick="AnswerEvent(this.innerText,this.id)">第二个选项</div>
+                <div class="chioce" id="chioce3" onclick="AnswerEvent(this.innerText,this.id)">第三个选项</div>
+                <div class="chioce" id="chioce4" onclick="SaveRememberPoint(number)">存档</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        SearchWordPlus();
+        ExitEvent();
+        var number;
+        number = GetCookie("之前的复习量");
+            if(number == ""){
+                number = 1;
+            }
+        var targetWord = getWord(number);
+        TestFunction(number);
+        
+    </script>
+</body>
+</html>
