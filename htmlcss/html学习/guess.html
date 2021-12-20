@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>猜数字游戏</title>
+        <style type="text/css">
+            html{
+                font-family: sans-serif;
+            }
+            body{
+                width: 50%;
+                max-width: 800px;
+                min-width: 480px;
+                margin: 0 auto;
+                background: url(flower.jpg) no-repeat;
+            }
+            .lastResult{
+                color: rgba(12, 0, 0, 0.466);
+                padding: 3px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h1>猜数字游戏</h1>
+        <p>随机选定了一个100以内的自然数。你能否在10次以内猜中。每次都会告诉你结果偏高还是偏低。</p>
+        <div class="form">
+            <label for="guessField">你的猜测值：</label>
+            <input type="text" id="guessField" class="guessField"/>
+            <input type="submit" value = "确定" class="guessSubmit"/>
+        </div>
+        
+        <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+
+  
+    </body>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessField = document.querySelector('.guessField');
+        const guessSubmit = document.querySelector('.guessSubmit');
+
+        let guessCount = 1;
+        let resetButton;
+
+        guessField.focus();
+        
+        function checkGuess(){
+           const userGuess = Number(guessField.value);
+           if(guessCount === 1){
+               guesses.textContent = '上次猜的数： ';
+           }
+           guesses.textContent += userGuess + ' ';
+            
+           if(userGuess === randomNumber){
+                lastResult.textContent = '恭喜你猜对啦！';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = '';
+                setGameOver();
+           }else if(guessCount == 10){
+               lastResult.textContent = '!!!超过猜测次数限制!!!';
+               setGameOver();
+           }else{
+               lastResult.textContent = '结果错误！';
+               lastResult.style.backgroundColor = 'red';
+               if(userGuess < randomNumber){
+                   lowOrHi.textContent = '你猜小了！';
+               }else if(userGuess > randomNumber){
+                   lowOrHi.textContent = '你猜大了！';
+               }
+           }
+                guessCount++;
+                guessField.value = '';
+                guessField.focus();
+        }
+        
+        guessSubmit.addEventListener('click',checkGuess);
+
+      
+    </script>
+</html>
+

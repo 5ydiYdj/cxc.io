@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="myStyle.css">
+    <script src="./myUtil.js"></script>
+    <script src="./words.js"></script>
+    <script src="./data.js"></script>
+    <script src="./server.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div id="search">
+                <div class="search-box">
+                    <button class="btn-search"><i class="fas fa-search">Search</i></button>
+                    <input type="text" class="input-search" placeholder="Word to search...">
+                </div>
+            </div>
+            <div id="author">
+                <div class="box">
+                    <button class="btn-information"><i class="fas fa-search">作者</i></button>
+                    <input type="text" class="information" placeholder="20192973曹雄成">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="function" onclick="ToTestPage()">顺序背单词</div></br>
+            <div class="function" onclick="ToRandomPage()">随机背单词</div></br>
+            <div class="function" onclick="ToReviewPage()">不熟的单词复习</div></br>
+        </div>
+        <div class="cardArea">
+            <div class="card" id="card1" onclick="ToShowPage(word1)">单词卡1</div>
+            <div class="card" id="card2" onclick="ToShowPage(word2)">单词卡2</div>
+            <div class="card" id="card3" onclick="ToShowPage(word3)">单词卡3</div>
+            <div class="card" id="card4" onclick="ToShowPage(word4)">单词卡3</div>
+        </div>
+        
+    </div>
+    <script> 
+        SearchWordPlus();
+        //MouseOn();
+        var word1 = getWordCard();
+        var word2 = getWordCard();
+        var word3 = getWordCard();
+        var word4 = getWordCard();
+        showData(word1.content,"#card1");
+        showData(word2.content,"#card2");
+        showData(word3.content,"#card3");
+        showData(word4.content,"#card4");
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>应答简单加法习题</h1>
+    <input type="text" id="arg1" name="arg1" >+<input type="text" id="arg2" name="arg2">
+    <input type="button" id="btn" name="btn" value="产生随机式子" onclick="getRandom();"><br>
+
+    请输入你的答案:<input type="text" id="total" name="total"><br>
+    <input type="button" id="ok" name="ok" value="ok" onclick="con();"><br>
+    <input type="text" id="lastResult" name="最后结果" >
+</body>
+<script language="JavaScript">
+        
+        var arg1 = Math.floor(Math.random() * 100) + 1;
+        var arg2 = Math.floor(Math.random() * 100) + 1;
+    function getRandom(){     
+        
+        document.getElementById("arg1").value=arg1;
+        document.getElementById("arg2").value=arg2;
+
+    }
+    function con()
+    {
+        var total=document.getElementById("total");
+        //var a=documment.getElementById("lastResult");
+    
+        if(!total.value||total.value.lenth==0)
+        {
+            alert(arg2);
+            alert("请正确输入你的答案")
+            return;
+        }
+        if(total.value==arg1+arg2)
+        {
+            document.getElementById("lastResult").value="正确";  
+        }
+        else{
+            document.getElementById("lastResult").value="错误";
+        }
+    }
+</script>
+</html>

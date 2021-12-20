@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的计算题</title>
+        <style>span{
+			color: rgb(12, 11, 12);
+		}</style>
+		<style type="text/css">
+		body{
+			background: url("images/城市.jpg");
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div style="background:rgb(79, 5, 163)" id="title">
+			简单的数学选择题
+		</div>
+		
+		<br>
+		<div id="number">
+			<span id="num1" class="num">1</span><span class="num">+</span><span id="num2" class="num">1</span><span class="num">=</span>
+		</div>
+		<br><br>
+		<table border="1px" width="60%" height="80px">
+			<tr align="center">
+				<td><span>答案选项:</span></td>
+				<td><input type="button" id="a" class="button" style="background: rgb(217, 250, 247); width: 100px;height:60px;"/></td>
+				<td><input type="button" id="b" class="button" style="background: rgb(220, 243, 241); width: 100px;height:60px;"/></td>
+				<td><input type="button" id="c" class="button" style="background: rgb(226, 247, 245);width: 100px;height:60px;"/></td>
+				<td><input type="button" id="d" class="button" style="background: rgb(215, 245, 242);width: 100px;height:60px;"/></td>
+				<td><input type="button" id="change"value="next" class="button"/></td>	
+			</tr>
+		</table>
+		<img id="img"src="./img/1.jpg" width="500px" alt="">
+		<br>
+		<p style="color: rgb(241, 8, 8); " id="console">请接着答题</p>
+		
+		
+	
+		
+		<br>
+		<hr color="blue" higth="8px" width="100%">
+		<div class="end"> 学号:20192973 </div>
+		<div style="color: rgba(10, 10, 10, 0.507);" class="end"> 2021/9/25 </div>
+		<span id="lastScore">分数:<span id="score"></span></span>
+		
+		<script type="text/javascript">
+			var randomBut=Math.floor(Math.random()*5);
+			var leftNum=document.querySelector("#num1");
+			var rightNum=document.querySelector("#num2");
+			var buta=document.querySelector("#a");
+			var butb=document.querySelector("#b");
+			var butc=document.querySelector("#c");
+			var butd=document.querySelector("#d");
+			var change=document.querySelector("#change");
+			var console=document.querySelector("#console");
+			var score=document.querySelector("#score");
+			var num1=Math.floor(Math.random()*11);
+			var num2=Math.floor(Math.random()*11);
+			leftNum.textContent=num1;
+			rightNum.textContent=num2;
+			var getScore=0;
+			score.textContent = getScore;
+			//判断得分函数
+			getConsole=function(){
+					console.textContent="回答错误!";
+					if(getScore==0){
+						getScore=0;
+						score.textContent=getScore;
+					}
+					else{
+						getScore-=10;
+						score.textContent=getScore;
+					}
+				
+			}
+			//随机正确按钮函数
+			getRandom=function(){
+				randomBut=Math.floor(Math.random()*5);
+				num1=Math.floor(Math.random()*11);
+				num2=Math.floor(Math.random()*11);
+				leftNum.textContent=num1;
+				rightNum.textContent=num2;
+				buta.value=Math.floor(Math.random()*11)+Math.floor(Math.random()*11);
+				butb.value=Math.floor(Math.random()*11)+Math.floor(Math.random()*11);
+				butc.value=Math.floor(Math.random()*11)+Math.floor(Math.random()*11);
+				butd.value=Math.floor(Math.random()*11)+Math.floor(Math.random()*11);
+				if(randomBut==1||randomBut==0){
+					buta.value=num1+num2;
+				}
+				if(randomBut==2){
+					butb.value=num1+num2;
+				}
+				if(randomBut==3){
+					butc.value=num1+num2;
+				}
+				if(randomBut==4){
+					butd.value=num1+num2;
+				}
+			}
+			
+			
+			//随机产生数
+			getRandom();
+			//换一题按钮
+			change.onclick=function(){
+				console.textContent="认真答题";
+				getRandom();			
+			}
+			//按钮a
+			buta.onclick=function(){
+				if(this.value==num1+num2){
+					console.textContent="恭喜你回答正确！";
+					getScore+=10;
+					score.textContent=getScore;
+				}
+				else{
+						getConsole();
+				}
+				
+			}
+			//按钮b
+			butb.onclick=function(){
+				if(this.value==num1+num2){
+					console.textContent="恭喜,回答正确！";
+					getScore+=10;
+					score.textContent=getScore;
+				}
+				else{
+						getConsole();
+				}
+			}
+			//按钮c
+			butc.onclick=function(){
+				if(this.value==num1+num2){
+					console.textContent="恭喜,回答正确！";
+					getScore+=10;
+					score.textContent=getScore;
+				}
+				else{
+						getConsole();
+				}
+			}
+			//按钮d
+			butd.onclick=function(){
+				if(this.value==num1+num2){
+					console.textContent="恭喜,回答正确！";
+					getScore+=10;
+					score.textContent=getScore;
+				}
+				else{
+						getConsole();
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

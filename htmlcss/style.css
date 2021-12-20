@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color:rgb(6, 104, 87);
+}
+
+.header{
+    background-color: cornsilk;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    border-radius: 15px;
+}
+#search{
+    position: relative;
+    top: 25%;
+    background-color: cornsilk;
+    
+}
+.content{
+    background-color: rgb(6, 104, 87);
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: large;
+    font-family: '幼圆';
+}
+.function{
+    margin:0px;
+    text-align: center;
+    background-color: cyan;
+    padding: 45px 0;
+    border-radius: 10px;
+}
+.function:hover{
+    padding: 50px;
+    background-color: rgb(181, 250, 250);
+}
+.card{
+    height: 100px;
+    width: 25%;
+    background-color: rgb(96, 250, 255);
+    border-radius: 15px;
+    border: 2px;
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+    line-height: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.card:hover{
+    background-color: rgb(164, 249, 252);
+}
+#card2{
+    position: relative;
+    left: 25%;
+    top: -100px;
+}
+#card3{
+    position: relative;
+    left: 50%;
+    top: -200px;
+}
+#card4{
+    position: relative;
+    left: 75%;
+    top: -300px;
+}
+#chioceArea{
+    margin: 2px;
+}
+.chioce{
+    font-family: fantasy;
+    position: relative;
+    left: 15%;
+    text-align: center;
+    height: 50px;
+    width: 70%;
+    padding: 20px 0;
+    border: 3px solid cyan;
+    background-color: white;
+    border-radius: 25px;
+    line-height: 50px;
+}
+.chioce:hover{
+    background-color: cyan;
+}
+.word{
+    font-size: xx-large;
+    color:#fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+}
+
+#showPage{
+    width: 500px;
+    height: 300px;
+    position:absolute;
+    top: 20%;
+    left: 35%;
+    background-color: cadetblue;
+    color: cornsilk;
+    text-align: center;
+    border-radius: 15px;
+}
+#wordContent{
+    font-size:xx-large;
+    font-family:'Times New Roman', Times, serif;
+    background-color: cadetblue;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+#translation{
+    background-color: cadetblue;
+    top: 40%;
+    margin-top: 130px;
+    text-align: center;
+}
+
+#popWindowClose{
+    position: inherit;
+    right: 5px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: cornsilk;
+    border-radius: 50px;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-delay: 0;
+    animation-timing-function: ease;
+    animation-iteration-count:infinite;
+    animation-play-state: paused;
+}
+
+#popWindowClose::after{
+    width: 100%;
+    position:absolute;
+    height: 1px;
+    background: #000;
+    content: "";
+    top: 7px;
+    left: 0;
+    transform: rotate(45deg);
+}
+#popWindowClose::before{
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background: #000;
+    content: "";
+    top: 7px;
+    right: 0;
+    transform: rotate(135deg);
+}
+
+@keyframes move{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>有用的十条建议</title>
+  <style type="text/css">
+    body{
+        background: url("images/柠檬.jpg");
+        font-size: 30px;
+    }
+    </style>
+ </head>
+ <body>
+
+  <script type="text/javascript">
+     var titles = [
+      "Slow down. The more you understand",
+      "Do the exercises. Write your own notes.",
+      " Read the “There are No Dumb Questions”",
+      "Make this the last thing you read before ",
+      "bed. Or at least the last challenging thing.",
+      "Drink water. Lots of it",
+      "Talk about it. Out loud",
+      "Listen to your brain",
+      "Feel something!",
+      "Create something!",
+      "Get Sleep"
+     ];
+     var contents = [
+      "Don’t just read. Stop and think. When the " +
+      "book asks you a question, don’t just skip to the " +
+      "answer. Imagine that someone really is asking " +
+      "the question. The more deeply you force your " +
+      "brain to think, the better chance you have of " +
+      "learning and remembering",
+      "We put them in, but if we did them for you, " +
+      "that would be like having someone else do " +
+      "your workouts for you. And don’t just look at " +
+      "the exercises. Use a pencil. There’s plenty of " +
+      "evidence that physical activity while learning " +
+      "can increase the learning.",
+      "That means all of them. They’re not optional " +
+      "sidebars—they’re part of the core content! " +
+      "Don’t skip them",
+      "Part of the learning (especially the transfer to " +
+      "long-term memory) happens after you put the " +
+      "book down. Your brain needs time on its own, to " +
+      "do more processing. If you put in something new " +
+      "during that processing-time, some of what you " +
+      "just learned will be lost.",
+      "Your brain works best in a nice bath of fluid. " +
+      "Dehydration (which can happen before you ever " +
+      "feel thirsty) decreases cognitive function.",
+      "Speaking activates a different part of the brain. " +
+      "If you’re trying to understand something, or " +
+      "increase your chance of remembering it later, say " +
+      "it out loud. Better still, try to explain it out loud " +
+      "to someone else. You’ll learn more quickly, and " +
+      "you might uncover ideas you hadn’t known were " +
+      "there when you were reading about it",
+      "Pay attention to whether your brain is getting " +
+      "overloaded. If you find yourself starting to skim the " +
+      "surface or forget what you just read, it’s time for a " +
+      "break. Once you go past a certain point, you won’t " +
+      "learn faster by trying to shove more in, and you " +
+      "might even hurt the process",
+      "Your brain needs to know that this matters. Get " +
+      "involved with the stories. Make up your own " +
+      "captions for the photos. Groaning over a bad joke is " +
+      "still better than feeling nothing at all",
+      "Apply this to something new you’re designing, or " +
+      "rework an older project. Just do something to get some " +
+      "experience beyond the exercises and activities in " +
+      "this book. All you need is a pencil and a problem " +
+      "to solve… a problem that might benefit from using " +
+      "JavaScript.",
+      "You’ve got to create a lot of new brain connections " +
+      "to learn to program. Sleep often; it helps"
+     ];
+
+
+     var elz = document.createElement("img") ;
+     var pText = document.createElement("p");
+     var title = document.createElement("h3");
+     var content = document.createElement("a");
+
+
+
+
+     elz.src =  "images/flower.jpg" ;
+	 elz.style.width = "200px" ;
+	 // elz.alt = "人物"+ (i+1) + "张照" ;
+     elz.style.border = "2px solid white" ;
+     elz.style.cursor = "pointer" ;
+     elz.style.float = "right";
+     elz.style.float = "top";
+     elz.style.padding = "5px";
+     // elz.style.position = "absolute;";
+
+     pText.style.border="4px solid green";
+     pText.style.borderRadius  = "40px";
+     pText.style.height= "400px";
+     // pText.style.weith= "10px";
+     pText.style.padding= "50px";
+
+
+     // pText.onmousemove = function(){
+     //  this.style.border = "2px solid brown" ;
+     // };
+     // pText.onmouseout = function(){
+     //  this.style.border = "2px solid blue" ;
+     // };
+
+     // title.innerText ="1."+ titles[0];
+     // content.innerText = contents[0];
+
+     title.innerText ="20192973";
+     content.innerText = "这里有十个建议,本处是封面,请点击照片查看我们的下一条建议";
+
+     document.body.appendChild(pText);
+
+     pText.appendChild(elz);
+     pText.appendChild(title);
+     pText.appendChild(content);
+
+     var Opacity = 0;
+     function changeOpacity(){
+
+      if(Opacity <= 1){
+       console.log(Opacity);
+       elz.style.opacity = Opacity;
+       Opacity = Opacity + 0.3;
+      }
+      if(Opacity > 1){
+       Opacity = 0;
+       return 0;
+      }
+      setTimeout("changeOpacity()",400);
+     }
+
+	 elz.onmousemove = function(){
+	   this.style.border = "2px solid purple" ;
+	   this.style.color = "2px solid green" ;
+
+
+	 };
+     elz.onmouseout = function(){
+	   this.style.border = "2px solid yellow" ;
+	 };
+
+     let i = 0;
+	 elz.onclick = function (){
+        elz.src =  "images/f" + (i+1) + ".jpg" ;
+        console.log(elz.src);
+        elz.style.opacity = 1;
+
+        title.innerText = (i+1)+"."+titles[i];
+
+        content.innerText = contents[i];
+        i++;
+        if(i > 9){
+         i = 0;
+        }
+        changeOpacity();
+     }
+
+  </script>
+ </body>
+</html>
